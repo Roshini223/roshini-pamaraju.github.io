@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pamaraju Roshini — AI/ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple:   #460073;
+    --violet:   #7500C0;
+    --lavender: #D9B0FF;
+    --soft:     #F5EFFE;
+    --ink:      #1A1A2E;
+    --mid:      #5C5C7A;
+    --line:     #E4D9F5;
+    --white:    #FFFFFF;
+    --card-bg:  #FAFAFE;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 48px;
+    height: 60px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    color: var(--purple);
+    text-decoration: none;
+    letter-spacing: -0.2px;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--violet); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 140px 48px 80px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .hero-role {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--violet);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: var(--purple);
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--violet);
+  }
+  .hero-summary {
+    max-width: 620px;
+    font-size: 16px;
+    color: var(--mid);
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+  .hero-links {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background: var(--purple);
+    color: var(--white);
+  }
+  .btn-primary:hover { background: var(--violet); }
+  .btn-outline {
+    border: 1.5px solid var(--line);
+    color: var(--mid);
+    background: var(--white);
+  }
+  .btn-outline:hover { border-color: var(--violet); color: var(--violet); }
+
+  .hero-badges {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+  }
+  .badge {
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--soft);
+    color: var(--violet);
+    border: 1px solid var(--lavender);
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 80px 48px; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+  .section-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--violet);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    letter-spacing: -0.5px;
+    color: var(--purple);
+    margin-bottom: 40px;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--card-bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  .exp-block { margin-bottom: 48px; }
+  .exp-block:last-child { margin-bottom: 0; }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .exp-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .exp-dates {
+    font-size: 12.5px;
+    color: var(--mid);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .exp-company {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--violet);
+    margin-bottom: 16px;
+  }
+
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+  }
+  .project-card:last-child { margin-bottom: 0; }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .project-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--purple);
+  }
+  .project-dates {
+    font-size: 11.5px;
+    color: var(--mid);
+  }
+
+  .proj-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .proj-bullets li {
+    font-size: 13.5px;
+    color: var(--mid);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .proj-bullets li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--violet);
+    font-weight: 700;
+  }
+  .proj-bullets li b { color: var(--ink); }
+
+  .tech-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 12px;
+  }
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 4px;
+    background: var(--soft);
+    color: var(--violet);
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .skill-card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--violet);
+    margin-bottom: 8px;
+  }
+  .skill-card-items {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  /* ── CERTS ── */
+  #certifications { background: var(--card-bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .cert-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .cert-issuer {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--violet);
+  }
+  .cert-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .cert-year {
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  /* ── CONTACT ── */
+  .contact-strip {
+    background: var(--purple);
+    padding: 60px 48px;
+    text-align: center;
+  }
+  .contact-strip h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .contact-strip p {
+    color: var(--lavender);
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  .contact-strip a.btn-primary {
+    background: var(--white);
+    color: var(--purple);
+  }
+  .contact-strip a.btn-primary:hover { background: var(--lavender); }
+  .contact-detail {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--lavender);
+  }
+  .contact-detail a { color: var(--lavender); text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 20px 48px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--mid);
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 0 20px; }
+    .nav-links { gap: 16px; }
+    .hero { padding: 110px 20px 60px; }
+    section { padding: 60px 20px; }
+    .contact-strip { padding: 50px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-name" href="#">Roshini Pamaraju</a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <p class="hero-role">Generative AI Engineer · Accenture</p>
+  <h1>Building agents that<br/><em>ship to production</em></h1>
+  <p class="hero-summary">
+    2+ years designing production-grade agentic AI systems — from ontology-driven incident platforms
+    to multi-source research engines. Promoted Associate → Analyst within 2 years.
+    5× certified across Anthropic, Google Cloud, and Google Gemini Partner programs.
+  </p>
+  <div class="hero-links">
+    <a class="btn btn-primary" href="https://www.linkedin.com/in/roshini-pamaraju-877a18249/" target="_blank">LinkedIn Profile</a>
+    <a class="btn btn-outline" href="mailto:pamarajuroshini@gmail.com">pamarajuroshini@gmail.com</a>
+  </div>
+  <div class="hero-badges">
+    <span class="badge">LangGraph</span>
+    <span class="badge">Multi-Agent Orchestration</span>
+    <span class="badge">RAG · Qdrant · Neo4j</span>
+    <span class="badge">LLMOps · DeepEval</span>
+    <span class="badge">FastAPI · Azure</span>
+    <span class="badge">OntologyMesh</span>
+    <span class="badge">LiteLLM</span>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Professional Experience</h2>
+
+    <!-- ANALYST -->
+    <div class="exp-block">
+      <div class="exp-header">
+        <span class="exp-title">AI/ML Computational Science Analyst</span>
+        <span class="exp-dates">Jun 2026 – Present</span>
+      </div>
+      <div class="exp-company">Accenture · Chennai, India</div>
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">Project 1 — Invoice Validation Agent</span>
+          <span class="project-dates">Jun 2026 – Present</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Designed and deployed a <b>multi-step Invoice Validation agent</b> using LangGraph + Azure Document Intelligence — automating end-to-end extraction, validation, and exception handling.</li>
+          <li>Built Docker images for Generative AI microservices; own the full <b>LLMOps lifecycle</b>: prompt engineering, model evaluation, structured output validation, and live monitoring.</li>
+          <li>Delivered ~6 AI prototypes from design to cloud, collaborating with infra teams on provisioning.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">LangGraph</span><span class="tag">Azure Document Intelligence</span>
+          <span class="tag">Docker</span><span class="tag">LLMOps</span><span class="tag">FastAPI</span>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">Project 2 — OntologyMesh: Ontology-Driven Intelligent Data Platform</span>
+          <span class="project-dates">Apr 2026 – Present</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Architected a <b>multi-tenant, ontology-driven incident management platform</b> connecting to enterprise sources (ServiceNow, Azure Log Analytics, Confluence, GitHub, Azure DevOps, App Insights) via independently versioned connector packages.</li>
+          <li>Built a <b>field-routing ingestion pipeline</b> classifying each record as VECTOR, GRAPH, or RELATIONAL — writing to Qdrant, Neo4j, and PostgreSQL; or a unified MongoDB Atlas mode using vectorSearch and embedded links arrays.</li>
+          <li>Designed <b>two LangGraph agentic pipelines</b>: a Query Graph for semantic/relational/structured retrieval, and an Incident Graph executing triage → root-cause analysis → decision → remediation → audit.</li>
+          <li>Integrated <b>LiteLLM for multi-provider LLM routing</b> (Cohere, Anthropic, Azure OpenAI), Celery + Redis for async ingestion, and RDFLib + OWL for ontology management. React + Vite frontend.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">LangGraph</span><span class="tag">Qdrant</span><span class="tag">Neo4j</span>
+          <span class="tag">MongoDB Atlas</span><span class="tag">LiteLLM</span><span class="tag">Celery</span>
+          <span class="tag">Redis</span><span class="tag">RDFLib + OWL</span><span class="tag">FastAPI</span>
+          <span class="tag">React + Vite</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASSOCIATE -->
+    <div class="exp-block">
+      <div class="exp-header">
+        <span class="exp-title">AI/ML Computational Science Associate</span>
+        <span class="exp-dates">Jul 2024 – May 2026</span>
+      </div>
+      <div class="exp-company">Accenture · Chennai, India</div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-name">Project — Multi-Source Market Research Engine</span>
+          <span class="project-dates">Jul 2024 – Mar 2026</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Built an <b>agentic microservice for automated market research report generation</b>, replacing manual workflows by synthesizing evidence from open web, uploaded docs, and SEMrush keyword APIs.</li>
+          <li>Architected a <b>two-tier LangGraph orchestration system</b>: top-level router across 15+ event types; per-topic worker graphs resolving at runtime across Gemini grounded search, Azure AI Search RAG, URL scraping, and SEMrush.</li>
+          <li>LangChain structured output (Pydantic) + manual ReAct tool-calling loop; topics run <b>concurrently under asyncio timeout isolation</b> with results streamed to UI.</li>
+          <li>Downstream enrichment pipeline: <b>6 chart types, JSON schema guardrails, LLM re-prompting</b> on failure, inline highlights, and footnote-to-source citation mapping.</li>
+          <li><b>Inline DeepEval quality scoring per node</b>, full audit trail in PostgreSQL + Azure Blob Storage, secretless auth via Azure Managed Identity.</li>
+        </ul>
+        <div class="tech-tags">
+          <span class="tag">LangGraph</span><span class="tag">Azure AI Search</span>
+          <span class="tag">Gemini Grounded Search</span><span class="tag">DeepEval</span>
+          <span class="tag">Pydantic</span><span class="tag">asyncio</span>
+          <span class="tag">PostgreSQL</span><span class="tag">Azure Blob Storage</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label">Capabilities</p>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-label">Agentic AI</div>
+        <div class="skill-card-items">LangGraph, LangChain, Multi-Agent Orchestration, MCP, Conditional State Machines, Checkpointing</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">LLMs & Models</div>
+        <div class="skill-card-items">Azure OpenAI GPT-4o, Anthropic Claude, Google Gemini 2.5 Flash, Cohere, LiteLLM</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">RAG & Vector Search</div>
+        <div class="skill-card-items">Azure AI Search, Qdrant, MongoDB Atlas vectorSearch, Neo4j, Gemini Grounded Search, SEMrush API</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">LLMOps</div>
+        <div class="skill-card-items">Prompt Engineering, Structured Output (Pydantic), DeepEval, Guardrails, Model Fallback, Retry Strategies</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Backend & Async</div>
+        <div class="skill-card-items">FastAPI, RabbitMQ, Celery, Redis, asyncio, PostgreSQL, SQLAlchemy, MongoDB</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Cloud & DevOps</div>
+        <div class="skill-card-items">Azure OpenAI, Azure Blob Storage, Azure Key Vault, Azure Managed Identity, Docker, Git, GitHub</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Ontology & Graph</div>
+        <div class="skill-card-items">RDFLib, OWL, Neo4j, ontology-driven architecture</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Languages</div>
+        <div class="skill-card-items">Python</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <p class="section-label">Credentials</p>
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-issuer">Anthropic</div>
+        <div class="cert-name">Claude Certified Architect – Foundations (CCA-F)</div>
+        <div class="cert-year">2026</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Google Cloud</div>
+        <div class="cert-name">Professional Machine Learning Engineer</div>
+        <div class="cert-year">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Google Cloud</div>
+        <div class="cert-name">Generative AI Leader</div>
+        <div class="cert-year">2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Google</div>
+        <div class="cert-name">Certified Partner Specialist: Gemini Enterprise Deployment</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Google</div>
+        <div class="cert-name">Certified Partner Specialist: Gemini Enterprise Agent Development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-strip" id="contact">
+  <h2>Let's connect</h2>
+  <p>Open to Generative AI and Agentic AI engineering roles</p>
+  <a class="btn btn-primary" href="https://www.linkedin.com/in/roshini-pamaraju-877a18249/" target="_blank">View LinkedIn Profile</a>
+  <div class="contact-detail">
+    📧 <a href="mailto:pamarajuroshini@gmail.com">pamarajuroshini@gmail.com</a>
+    &nbsp;·&nbsp; 📍 Chennai, India
+  </div>
+</div>
+
+<footer>
+  © 2026 Pamaraju Roshini · Built for the web
+</footer>
+
+</body>
+</html>
